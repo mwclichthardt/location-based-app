@@ -6,7 +6,7 @@ const loadPlaces = function(coords) {
         lat: coords.latitude,
         lng: coords.longitude
       },
-      name: "Munich",
+      name: "Marienplatz",
       location: {
         lat: 48.1374003177032,
         lng: 11.575480686836404
@@ -39,7 +39,7 @@ window.onload = () => {
           icon.setAttribute("name", place.name);
           icon.setAttribute(
             "src",
-            "https:/mwclichthardt/location-based-app/assets/cat.png"
+            "https://mwclichthardt.github.io/location-based-app/assets/cat.png"
           );
           // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
           icon.setAttribute("scale", "20, 20");
