@@ -39,7 +39,7 @@ window.onload = () => {
           icon.setAttribute("name", place.name);
           icon.setAttribute(
             "src",
-            "https://corrlichthardt.github.io/location-based-ar-tutorial/assets/cat.png"
+            "https:/mwclichthardt/location-based-app/assets/cat.png"
           );
           // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
           icon.setAttribute("scale", "20, 20");
