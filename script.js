@@ -5,12 +5,12 @@ const loadPlaces = function(coords) {
       location: {
         lat: coords.latitude,
         lng: coords.longitude
-      },
-      name: "Marienplatz",
-      location: {
-        lat: 48.1374003177032,
-        lng: 11.575480686836404
       }
+      // name: "Marienplatz",
+      // location: {
+      //   lat: 48.1374003177032,
+      //   lng: 11.575480686836404
+      // }
     }
   ];
 
@@ -26,6 +26,7 @@ window.onload = () => {
     function(position) {
       // then use it to load from remote APIs some places nearby
       loadPlaces(position.coords).then(places => {
+
         places.forEach(place => {
           const latitude = place.location.lat;
           const longitude = place.location.lng;
@@ -39,7 +40,7 @@ window.onload = () => {
           icon.setAttribute("name", place.name);
           icon.setAttribute(
             "src",
-            "https://mwclichthardt.github.io/location-based-app/assets/cat.png"
+            "/assets/cat.png"
           );
           // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
           icon.setAttribute("scale", "20, 20");
@@ -66,7 +67,7 @@ window.onload = () => {
 
               setTimeout(() => {
                 container.parentElement.removeChild(container);
-              }, 1500);
+              }, 2000);
             }
           };
 
