@@ -5,8 +5,10 @@ const loadPlaces = function(coords) {
       location: {
         lat: coords.latitude + 0.0001,
         lng: coords.longitude + 0.0001
-      },
-      name: "Marienplatz",
+      }
+    },
+    {
+      name: "Munich",
       location: {
         lat: 48.1374003177032,
         lng: 11.575480686836404
