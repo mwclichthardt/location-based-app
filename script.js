@@ -45,7 +45,7 @@ window.onload = () => {
             "https://mwclichthardt.github.io/location-based-app/assets/cat.png"
           );
           // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
-          icon.setAttribute("scale", "5, 5");
+          icon.setAttribute("scale", "5, 8");
 
           icon.addEventListener("loaded", () =>
             window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"))
