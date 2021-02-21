@@ -5,16 +5,14 @@ const loadPlaces = function(coords) {
       location: {
         lat: coords.latitude + 0.0001,
         lng: coords.longitude + 0.0001
+      },
+      name: "Marienplatz",
+      location: {
+        lat: 48.1374003177032,
+        lng: 11.575480686836404
       }
-      // name: "Marienplatz",
-      // location: {
-      //   lat: 48.1374003177032,
-      //   lng: 11.575480686836404
-      // }
     }
   ];
-
-  console.log(coords.longitude)
 
   return Promise.resolve(PLACES);
 };
@@ -45,7 +43,7 @@ window.onload = () => {
             "https://mwclichthardt.github.io/location-based-app/assets/cat.png"
           );
           // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
-          icon.setAttribute("scale", "5, 8");
+          icon.setAttribute("scale", "5, 5");
 
           icon.addEventListener("loaded", () =>
             window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"))
