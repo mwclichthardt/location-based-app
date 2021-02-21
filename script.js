@@ -3,8 +3,8 @@ const loadPlaces = function(coords) {
     {
       name: "Hello there",
       location: {
-        lat: coords.latitude,
-        lng: coords.longitude + 0.0001
+        lat: coords.latitude + 0.00001,
+        lng: coords.longitude + 0.00001
       }
       // name: "Marienplatz",
       // location: {
