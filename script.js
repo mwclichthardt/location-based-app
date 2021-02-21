@@ -4,7 +4,7 @@ const loadPlaces = function(coords) {
       name: "Hello there",
       location: {
         lat: coords.latitude,
-        lng: coords.longitude + 0.01
+        lng: coords.longitude + 0.0001
       }
       // name: "Marienplatz",
       // location: {
@@ -45,7 +45,7 @@ window.onload = () => {
             "https://mwclichthardt.github.io/location-based-app/assets/cat.png"
           );
           // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
-          icon.setAttribute("scale", "5, 5");
+          icon.setAttribute("scale", "10, 10");
 
           icon.addEventListener("loaded", () =>
             window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"))
