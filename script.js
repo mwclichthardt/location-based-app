@@ -4,7 +4,7 @@ const loadPlaces = function(coords) {
       name: "Hello there",
       location: {
         lat: coords.latitude,
-        lng: coords.longitude
+        lng: coords.longitude + 0.0000001
       }
       // name: "Marienplatz",
       // location: {
@@ -13,6 +13,8 @@ const loadPlaces = function(coords) {
       // }
     }
   ];
+
+  console.log(coords.longitude)
 
   return Promise.resolve(PLACES);
 };
