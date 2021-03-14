@@ -1,14 +1,14 @@
 const loadPlaces = function(coords) {
   const PLACES = [
     {
-      name: "Hello there",
+      name: "Hello there, you caught me!",
       location: {
         lat: coords.latitude + 0.0001,
         lng: coords.longitude + 0.0001
       }
     },
     {
-      name: "Marienplatz",
+      name: "You caught me at Marienplatz!",
       location: {
         lat: 48.1374003177032,
         lng: 11.575480686836404
@@ -37,9 +37,9 @@ window.onload = () => {
             `latitude: ${latitude}; longitude: ${longitude};`
           );
           model.setAttribute("name", place.name);
-          model.setAttribute("scale", "0.5 0.5 0.5");
+          model.setAttribute("scale", "0.08 0.08 0.08");
           model.setAttribute("rotation", "0 180 0");
-          model.setAttribute("gltf-model", "./assets/bananya_birbo/scene.gltf");
+          model.setAttribute("gltf-model", "./assets/dragonite/scene.gltf");
  
           model.addEventListener("loaded", () =>
             window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"))
