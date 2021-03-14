@@ -39,7 +39,7 @@ window.onload = () => {
           model.setAttribute("name", place.name);
           model.setAttribute("scale", "0.5 0.5 0.5");
           model.setAttribute("rotation", "0 180 0");
-          model.setAttribute("gltf-model", "./assets/magnemite/scene.gltf");
+          model.setAttribute("gltf-model", "./assets/bananya_birbo/scene.gltf");
  
           model.addEventListener("loaded", () =>
             window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"))
