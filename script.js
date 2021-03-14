@@ -37,9 +37,9 @@ window.onload = () => {
             `latitude: ${latitude}; longitude: ${longitude};`
           );
           model.setAttribute("name", place.name);
-          model.setAttribute("scale", "0.5 0.5 0.5");
+          model.setAttribute("scale", "0.2 0.2 0.2");
           model.setAttribute("rotation", "0 180 0");
-          model.setAttribute("gltf-model", "./assets/dragonite/scene.gltf");
+          model.setAttribute("gltf-model", "./assets/articuno/scene.gltf");
  
           model.addEventListener("loaded", () =>
             window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"))
