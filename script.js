@@ -38,9 +38,10 @@ window.onload = () => {
           );
           model.setAttribute("name", place.name);
           model.setAttribute("scale", "0.2 0.2 0.2");
-          // model.setAttribute("rotation", "0 180 0");
-          model.setAttribute("gltf-model", "./assets/articuno/scene.gltf");
- 
+          model.setAttribute("rotation", "0 180 0");
+          model.setAttribute("gltf-model", "./assets/dragonite/scene.gltf");
+          model.setAttribute("animation-mixer", "");
+
           model.addEventListener("loaded", () =>
             window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"))
           );
