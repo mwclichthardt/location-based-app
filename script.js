@@ -31,19 +31,6 @@ window.onload = () => {
           const latitude = place.location.lat;
           const longitude = place.location.lng;
 
-          const icon = document.createElement("a-image");
-          icon.setAttribute(
-            "gps-entity-place",
-            `latitude: ${latitude}; longitude: ${longitude}`
-          );
-          icon.setAttribute("name", place.name);
-          icon.setAttribute(
-            "src",
-            "https://mwclichthardt.github.io/location-based-app/assets/cat.png"
-          );
-          icon.setAttribute("scale", "5, 5");
-
-
           const model = document.createElement("a-entity");
           model.setAttribute(
             "gps-entity-place",
@@ -57,10 +44,6 @@ window.onload = () => {
           model.addEventListener("loaded", () =>
             window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"))
           );
-
-          // icon.addEventListener("loaded", () =>
-          //   window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"))
-          // );
 
           const clickListener = function(ev) {
             ev.stopPropagation();
