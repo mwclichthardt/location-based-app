@@ -29,7 +29,7 @@ div.debug {
   width: 80%;
   margin: 1em;
   padding: 0.25em;
-  color: #ff7500;
+  color: #f52fff;
   font-size: 0.75em;
   text-align: center;
   background-color: white;
@@ -47,7 +47,7 @@ div.debug {
 #place-label > span {
   z-index: 99999;
   padding: 0.25em;
-  color: #ff7500;
+  color: #f52fff;
   text-align: center;
   background-color: white;
   font-size: 1.5em;

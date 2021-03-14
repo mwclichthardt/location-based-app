@@ -8,7 +8,7 @@ const loadPlaces = function(coords) {
       }
     },
     {
-      name: "Munich",
+      name: "Marienplatz",
       location: {
         lat: 48.1374003177032,
         lng: 11.575480686836404
@@ -23,17 +23,14 @@ window.onload = () => {
 
   const scene = document.querySelector("a-scene");
 
-  // first get current user location
   return navigator.geolocation.getCurrentPosition(
     function(position) {
-      // then use it to load from remote APIs some places nearby
       loadPlaces(position.coords).then(places => {
 
         places.forEach(place => {
           const latitude = place.location.lat;
           const longitude = place.location.lng;
 
-          // add place icon
           const icon = document.createElement("a-image");
           icon.setAttribute(
             "gps-entity-place",
@@ -44,12 +41,26 @@ window.onload = () => {
             "src",
             "https://mwclichthardt.github.io/location-based-app/assets/cat.png"
           );
-          // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
           icon.setAttribute("scale", "5, 5");
 
-          icon.addEventListener("loaded", () =>
+
+          const model = document.createElement("a-entity");
+          model.setAttribute(
+            "gps-entity-place",
+            `latitude: ${latitude}; longitude: ${longitude};`
+          );
+          model.setAttribute("name", place.name);
+          model.setAttribute("scale", "0.5 0.5 0.5");
+          model.setAttribute("rotation", "0 180 0");
+          model.setAttribute("gltf-model", "./assets/magnemite/scene.gltf");
+ 
+          model.addEventListener("loaded", () =>
             window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"))
           );
+
+          // icon.addEventListener("loaded", () =>
+          //   window.dispatchEvent(new CustomEvent("gps-entity-place-loaded"))
+          // );
 
           const clickListener = function(ev) {
             ev.stopPropagation();
@@ -73,9 +84,9 @@ window.onload = () => {
             }
           };
 
-          icon.addEventListener("click", clickListener);
+          model.addEventListener("click", clickListener);
 
-          scene.appendChild(icon);
+          scene.appendChild(model);
         });
       });
     },
